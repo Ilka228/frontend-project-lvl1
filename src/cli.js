@@ -6,7 +6,7 @@ export const greet = () => {
 };
 
 const answer = () => {
-  const name = readlineSync.question('Your answer:');
+  const name = readlineSync.question('Your answer: ');
   return name;
 };
 export default answer;
