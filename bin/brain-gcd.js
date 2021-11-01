@@ -15,7 +15,7 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-const condition = 'What is the result of the expression?';
+const condition = 'Find the greatest common divisor of given numbers.';
 console.log(condition);
 for (let i = 1; i < 4; i += 1) {
   const number1 = getRandomInRange(section1, section2);
