@@ -10,6 +10,3 @@ const answer = () => {
   return name;
 };
 export default answer;
-
-
-
