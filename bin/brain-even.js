@@ -7,13 +7,9 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// console.log('Welcome to the Brain Games!');
-// const name = name1;
-// console.log(`Hello, ${name}!`);
-
 const section1 = 10;
 const section2 = 20;
-// console.log(getRandomInRange(section1, section2));
+
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 console.log(condition);
 let count = 0;

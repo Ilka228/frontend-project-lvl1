@@ -18,7 +18,7 @@ for (let i = 1; i < 4; i += 1) {
   const number2 = getRandomInRange(section1, section2);
   const item = items[Math.floor(Math.random() * items.length)];
   console.log(`Question: ${number1} ${item} ${number2}`);
-  // console.log(eval(number1 + item + number2));
+
   const certanswer = Number(answer());
   if (Number(eval(number1 + item + number2)) === certanswer) {
     console.log('Correct!');

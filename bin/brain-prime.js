@@ -25,7 +25,7 @@ console.log(condition);
 for (let i = 1; i < 4; i += 1) {
   const number1 = getRandomInRange(section1, section2);
   console.log(`Question: ${number1}`);
-  // console.log(eval(number1 + item + number2));
+
   const certanswer = answer();
   const correctAnswer = isPrime(number1);
   if (correctAnswer === certanswer) {
