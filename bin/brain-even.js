@@ -12,15 +12,13 @@ const section2 = 20;
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 console.log(condition);
-let count = 0;
 for (let i = 1; i < 4; i += 1) {
   const number = getRandomInRange(section1, section2);
   console.log(`Question: ${number}`);
   const certanswer = answer();
   if (((number % 2) === 0 && certanswer === 'yes') || ((number % 2) === 1 && certanswer === 'no')) {
     console.log('Correct! ');
-    count = i;
-    if (count === 3) {
+    if (i === 3) {
       console.log(`Congratulations, ${name1}!`);
     }
   } else {
