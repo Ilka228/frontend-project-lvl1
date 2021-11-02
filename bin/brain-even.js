@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import answer, {greet} from '../src/cli.js';
+import answer, { greet } from '../src/cli.js';
 
 const name1 = greet();
 function getRandomInRange(min, max) {

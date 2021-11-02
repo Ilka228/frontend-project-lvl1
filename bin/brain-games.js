@@ -6,5 +6,5 @@ console.log('Welcome to the Brain Games!');
 
 // let name = readlineSync.question('May I have your name? ');
 
-export const name1 = greet();
+const name1 = greet();
 console.log(`Hello, ${name1}!`);
