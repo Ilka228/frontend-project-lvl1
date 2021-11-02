@@ -1,5 +1,6 @@
-import answer from '../src/cli.js';
-import { name1 } from './brain-games.js';
+#!/usr/bin/env node
+import answer, {greet} from '../src/cli.js';
+const name1 = greet();
 
 function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
