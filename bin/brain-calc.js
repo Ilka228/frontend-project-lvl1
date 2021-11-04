@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { launchcalc } from '../src/index.js';
+import engine from '../src/engine.js';
+import { condition, genQuest } from '../games/brain-calc.js';
 
-const section1 = 2;
-const section2 = 40;
-const items = ['*', '+', '-'];
-const condition = 'What is the result of the expression?';
-launchcalc(condition, section1, section2, items);
+engine(condition, genQuest);

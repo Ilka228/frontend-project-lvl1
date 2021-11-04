@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-import { launcheven } from '../src/index.js';
+import engine from '../src/engine.js';
+import { condition, genQuest } from '../games/brain-even.js';
 
-const section1 = 10;
-const section2 = 20;
-const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
-launcheven(condition, section1, section2);
+engine(condition, genQuest);
