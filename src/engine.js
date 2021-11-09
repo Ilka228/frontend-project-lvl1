@@ -1,19 +1,21 @@
-import { answer, greet } from './cli.js';
-
-function engine(condition, genQuest) {
-  const userName = greet();// приветсвие
-  console.log(condition);// условия задания
-  for (let i = 0; i < 3; i += 1) {
-    const arr = genQuest();
-    console.log(`Question: ${arr[0]}`);
-    const certAnswer = answer();// получение
-    if (arr[1] === certAnswer) {
+import { greet } from './cli.js';
+import readlineSync from 'readline-sync';
+const roundCount = 3;
+const engine = (getGameData) => {
+  const userName = greet();
+  const task = getGameData();
+  console.log(task[2]);
+  for (let i = 0; i < roundCount; i += 1) {
+    const gameData = getGameData();
+    console.log(`Question: ${gameData[0]}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (gameData[1] === userAnswer) {
       console.log('Correct!');
-      if (i === 2) {
+      if (i === (roundCount - 1)) {
         console.log(`Congratulations, ${userName}!`);
       }
     } else {
-      console.log(`'${certAnswer}' is wrong answer ;(. Correct answer was '${arr[1]}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData[1]}'.`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
