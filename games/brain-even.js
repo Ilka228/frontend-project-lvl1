@@ -1,9 +1,11 @@
-import { getRandomInRange } from '../src/cli.js';
 
+const getRandomInRange = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 const rangeStart = 10;
 const rangeEnd = 20;
-export const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
-export const genQuest = () => {
+const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+export const getGameData = () => {
   const question = getRandomInRange(rangeStart, rangeEnd);
   let correctAnswer = 0;
   if ((question % 2) === 0) {
@@ -11,5 +13,5 @@ export const genQuest = () => {
   } else {
     correctAnswer = 'no';
   }
-  return [question, correctAnswer];
+  return [question, correctAnswer, condition];
 };

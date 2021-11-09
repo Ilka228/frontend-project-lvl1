@@ -1,10 +1,15 @@
-import { getRandomInRange } from '../src/cli.js';
+
 
 const rangeStart = 0;
 const rangeEnd = 40;
 const countMin = 5;
 const countMax = 13;
-export const genQuest = () => {
+const getRandomInRange = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const condition = 'What number is missing in the progression?';
+export const getGameData = () => {
   const arrBegin = getRandomInRange(rangeStart, rangeEnd);
   const difference = getRandomInRange(rangeStart, rangeEnd);
   const count = getRandomInRange(countMin, countMax);
@@ -16,7 +21,7 @@ export const genQuest = () => {
   arr[randomNumber] = '..';
   const question = arr.join(' ');
   const correctAnswer = String(arrBegin + (difference * randomNumber));
-  return [question, correctAnswer];
+  return [question, correctAnswer, condition];
 };
 
-export const condition = 'What number is missing in the progression?';
+ 
