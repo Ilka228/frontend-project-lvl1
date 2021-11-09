@@ -1,11 +1,8 @@
-
-const getRandomInRange = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const rangeStart = 10;
 const rangeEnd = 20;
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
-export const getGameData = () => {
+const getGameData = () => {
   const question = getRandomInRange(rangeStart, rangeEnd);
   let correctAnswer = 0;
   if ((question % 2) === 0) {
@@ -15,3 +12,4 @@ export const getGameData = () => {
   }
   return [question, correctAnswer, condition];
 };
+export default getGameData;

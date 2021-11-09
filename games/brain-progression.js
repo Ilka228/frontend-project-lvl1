@@ -1,15 +1,11 @@
-
-
 const rangeStart = 0;
 const rangeEnd = 40;
 const countMin = 5;
 const countMax = 13;
-const getRandomInRange = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const condition = 'What number is missing in the progression?';
-export const getGameData = () => {
+const getGameData = () => {
   const arrBegin = getRandomInRange(rangeStart, rangeEnd);
   const difference = getRandomInRange(rangeStart, rangeEnd);
   const count = getRandomInRange(countMin, countMax);
@@ -23,5 +19,4 @@ export const getGameData = () => {
   const correctAnswer = String(arrBegin + (difference * randomNumber));
   return [question, correctAnswer, condition];
 };
-
- 
+export default getGameData;

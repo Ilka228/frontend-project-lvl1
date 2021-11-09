@@ -1,5 +1,6 @@
-import { greet } from './cli.js';
 import readlineSync from 'readline-sync';
+import greet from './cli.js';
+
 const roundCount = 3;
 const engine = (getGameData) => {
   const userName = greet();
@@ -20,5 +21,5 @@ const engine = (getGameData) => {
       break;
     }
   }
-}
+};
 export default engine;

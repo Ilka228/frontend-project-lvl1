@@ -28,15 +28,13 @@ const doMath = (x, znak, y) => {
   return math;
 };
 
-const getRandomInRange = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const rangeStart = 2;
 const rangeEnd = 40;
 const items = ['*', '+', '-'];
 const condition = 'What is the result of the expression?';
-export const getGameData = () => {
+const getGameData = () => {
   const number1 = getRandomInRange(rangeStart, rangeEnd);
   const number2 = getRandomInRange(rangeStart, rangeEnd);
   const item = items[Math.floor(Math.random() * items.length)];
@@ -45,3 +43,4 @@ export const getGameData = () => {
 
   return [question, correctAnswer, condition];
 };
+export default getGameData;
