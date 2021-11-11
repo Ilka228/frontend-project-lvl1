@@ -6,17 +6,17 @@ const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1
 
 const condition = 'What number is missing in the progression?';
 const getGameData = () => {
-  const arrBegin = getRandomInRange(rangeStart, rangeEnd);
+  const numbersBegin = getRandomInRange(rangeStart, rangeEnd);
   const difference = getRandomInRange(rangeStart, rangeEnd);
   const count = getRandomInRange(countMin, countMax);
   const randomNumber = getRandomInRange(0, count - 1);
-  const arr = [];
+  const numbers = [];
   for (let n = 0; n < count; n += 1) {
-    arr.push(arrBegin + (difference * n));
+    numbers.push(numbersBegin + (difference * n));
   }
-  arr[randomNumber] = '..';
-  const question = arr.join(' ');
-  const correctAnswer = String(arrBegin + (difference * randomNumber));
+  numbers[randomNumber] = '..';
+  const correctAnswer = String(numbersBegin + (difference * randomNumber));
+  const question = numbers.join(' ');
   return [question, correctAnswer, condition];
 };
 export default getGameData;
