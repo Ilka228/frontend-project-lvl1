@@ -10,16 +10,13 @@ const engine = (getGameData) => {
     const gameData = getGameData();
     console.log(`Question: ${gameData[0]}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (gameData[1] === userAnswer) {
-      console.log('Correct!');
-      if (i === (roundCount - 1)) {
-        console.log(`Congratulations, ${userName}!`);
-      }
-    } else {
+    if (gameData[1] !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameData[1]}'.`);
       console.log(`Let's try again, ${userName}!`);
-      break;
-    }
+      return;
+    }       
+    console.log('Correct!');   
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 export default engine;
