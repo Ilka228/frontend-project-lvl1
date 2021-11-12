@@ -37,7 +37,8 @@ const condition = 'What is the result of the expression?';
 const getGameData = () => {
   const number1 = getRandomInRange(rangeStart, rangeEnd);
   const number2 = getRandomInRange(rangeStart, rangeEnd);
-  const item = items[Math.floor(Math.random() * items.length)];
+  const randomNumber = getRandomInRange(0, items.length - 1);
+  const item = items[randomNumber];
   const question = `${number1} ${item} ${number2}`;
   const correctAnswer = String(doMath(number1, item, number2));
 
