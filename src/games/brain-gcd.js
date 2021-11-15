@@ -1,21 +1,23 @@
-const gcd = (a, b) => {
-  if (!b) {
-    return a;
-  }
-
-  return gcd(b, a % b);
-};
-
-const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import engine from '../engine.js';
+import getRandomInRange from '../randomFunc.js';
 
 const rangeStart = 1;
 const rangeEnd = 1000;
 const condition = 'Find the greatest common divisor of given numbers.';
+const getGcd = (a, b) => {
+  if (!b) {
+    return a;
+  }
+
+  return getGcd(b, a % b);
+};
+
 const getGameData = () => {
   const number1 = getRandomInRange(rangeStart, rangeEnd);
   const number2 = getRandomInRange(rangeStart, rangeEnd);
   const question = `${number1} ${number2}`;
-  const correctAnswer = String(gcd(number1, number2));
-  return [question, correctAnswer, condition];
+  const correctAnswer = String(getGcd(number1, number2));
+  return [question, correctAnswer];
 };
-export default getGameData;
+const engineGcd = () => engine(condition, getGameData);
+export default engineGcd;

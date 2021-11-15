@@ -1,19 +1,27 @@
-const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import engine from '../engine.js';
+import getRandomInRange from '../randomFunc.js';
+
+const rangeStart = 1;
+const rangeEnd = 1000;
+const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
   for (let n = 2; n < num; n += 1) {
     if (num % n === 0) {
       return false;
     }
   }
+
   return true;
 };
 
-const rangeStart = 2;
-const rangeEnd = 1000;
-const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const getGameData = () => {
   const question = getRandomInRange(rangeStart, rangeEnd);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, correctAnswer, condition];
+  return [question, correctAnswer];
 };
-export default getGameData;
+const enginePrime = () => engine(condition, getGameData);
+export default enginePrime;
